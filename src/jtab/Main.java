@@ -170,7 +170,7 @@ public class Main extends javax.swing.JFrame {
 
         int fingers = 1;
 
-        String[][] braco = new String[][]{
+        String[][] arm = new String[][]{
             {"□", "□", "□", "□", "□", "□", " - Capo"},
             {"|", "|", "|", "|", "|", "|", " - I"},
             {"|", "|", "|", "|", "|", "|", " - II"},
@@ -185,22 +185,20 @@ public class Main extends javax.swing.JFrame {
             {"|", "|", "|", "|", "|", "|", " - XX"},
             {"|", "|", "|", "|", "|", "|", " - XXX"}};
         for (int i = 0; i < e.length; i++) {
-
-            boolean entrou = false;
-
+            boolean stepInto = false;
             {
 
                 if (fingers < 4) {
-                    //
+                    //NOP
                 } else {
 
                     fingers = 1;
                     StringBuilder chord = new StringBuilder();
-                    for (int j = 0; j < braco.length; j++) {
-                        String[] key = braco[j];
+                    for (int j = 0; j < arm.length; j++) {
+                        String[] key = arm[j];
                         for (int k = 0; k < key.length; k++) {
                             String string = key[k];
-                            chord.append(braco[j][k]);
+                            chord.append(arm[j][k]);
                         }
                         chord.append("\n");
 
@@ -211,13 +209,10 @@ public class Main extends javax.swing.JFrame {
                     editorPane.setFont(f);
                     editorPane.setEditable(false);
                     editorPane.setText(chord.toString());
-                    //texto.setBorder(null);
                     editorPane.setSize(200, 100);
                     AREA2.add(editorPane);
 
-                    //AREA2.append(acorde.toString());
-                    //AREA2.append("\n\n\n\n");
-                    braco = new String[][]{
+                    arm = new String[][]{
                         {"□", "□", "□", "□", "□", "□", " - Capo"},
                         {"|", "|", "|", "|", "|", "|", " - I"},
                         {"|", "|", "|", "|", "|", "|", " - II"},
@@ -237,51 +232,51 @@ public class Main extends javax.swing.JFrame {
                 if (e[i].replace("-", "").length() > 0) {
 
                     if (Integer.parseInt(e[i]) == 0) {
-                        braco[0][5] = "■";
+                        arm[0][5] = "■";
                     } else {
-                        braco[Integer.parseInt(e[i])][5] = "●";
+                        arm[Integer.parseInt(e[i])][5] = "●";
                         fingers++;
                     }
 
-                    entrou = true;
+                    stepInto = true;
 
                 }
                 if (B[i].replace("-", "").length() > 0) {
 
                     if (Integer.parseInt(B[i]) == 0) {
-                        braco[0][4] = "■";
+                        arm[0][4] = "■";
                     } else {
-                        braco[Integer.parseInt(B[i])][4] = "●";
+                        arm[Integer.parseInt(B[i])][4] = "●";
                         fingers++;
                     }
 
-                    entrou = true;
+                    stepInto = true;
                 }
                 if (G[i].replace("-", "").length() > 0) {
                     if (Integer.parseInt(G[i]) == 0) {
-                        braco[0][3] = "■";
+                        arm[0][3] = "■";
                     } else {
-                        braco[Integer.parseInt(G[i])][3] = "●";
+                        arm[Integer.parseInt(G[i])][3] = "●";
                         fingers++;
                     }
 
-                    entrou = true;
+                    stepInto = true;
                 }
                 if (D[i].replace("-", "").length() > 0) {
                     if (Integer.parseInt(D[i]) == 0) {
-                        braco[0][2] = "■";
+                        arm[0][2] = "■";
                     } else {
-                        braco[Integer.parseInt(D[i])][2] = "●";
+                        arm[Integer.parseInt(D[i])][2] = "●";
                         fingers++;
                     }
 
-                    entrou = true;
+                    stepInto = true;
                 }
                 if (A[i].replace("-", "").length() > 0) {
                     if (Integer.parseInt(A[i]) == 0) {
-                        braco[0][1] = "■";
+                        arm[0][1] = "■";
                     } else {
-                        braco[Integer.parseInt(A[i])][1] = "●";
+                        arm[Integer.parseInt(A[i])][1] = "●";
                         fingers++;
                     }
                     fingers++;
@@ -289,42 +284,16 @@ public class Main extends javax.swing.JFrame {
                 }
                 if (E[i].replace("-", "").length() > 0) {
                     if (Integer.parseInt(E[i]) == 0) {
-                        braco[0][0] = "■";
+                        arm[0][0] = "■";
                     } else {
-                        braco[Integer.parseInt(E[i])][0] = "●";
+                        arm[Integer.parseInt(E[i])][0] = "●";
                         fingers++;
                     }
 
-                    entrou = true;
+                    stepInto = true;
                 }
             }
         }
 
     }
 }
-
-
-/*
-
- e|-----3-------
- B|-------------
- G|-------------
- D|-------------
- A|-----2-------
- E|-----3-------
-
- e|-2-----------
- B|-3-----------
- G|-2-----------
- D|-------------
- A|-------------
- E|-------------
-
- e|-------------
- B|-1-----------
- G|-------------
- D|-2-----------
- A|-3-----------
- E|-------------
-
- */
