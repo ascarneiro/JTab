@@ -1,7 +1,8 @@
 # JTab
-# Prototype of converter guitar Tab to Fingering positions
-# 
 <pre>
+
+<b>Prototype of converter guitar Tab to Fingering positions</b>
+
 For guitar beginners :)
 Sample Use:
 
