@@ -5,16 +5,13 @@
  */
 package jtab;
 
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics2D;
 import java.util.ArrayList;
 import javax.swing.JEditorPane;
-import javax.swing.JPanel;
 
 /**
  *
- * @author Sylvano
+ * @author ascarneiro
  */
 public class Main extends javax.swing.JFrame {
 
