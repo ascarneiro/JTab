@@ -3,8 +3,9 @@
 
 <b>Prototype of converter guitar Tab to Fingering positions</b>
 For guitar beginners :)
-<b>run /bin/JTab.jar<b>
-Sample Use:
+<b>run /bin/JTab.jar</b>
+
+<b>Sample Use:</b>
 
  e|-----3-------
  B|-------------
